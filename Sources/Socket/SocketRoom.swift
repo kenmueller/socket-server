@@ -3,6 +3,8 @@ import Vapor
 public final class SocketRoom<Client: SocketClient> {
 	public private(set) var clients = [UUID: Client]()
 	
+	public init() {}
+	
 	public func register(request: Request, socket: WebSocket) {
 		guard
 			let data = request.query[String.self, at: "data"]?.data(using: .utf8),
