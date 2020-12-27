@@ -1,5 +1,6 @@
 public protocol SocketClient {
-	associatedtype Query: SocketQuery
+	associatedtype Share: SocketShare = SocketDefaultShare
+	associatedtype Query: SocketQuery = SocketDefaultQuery
 	
 	init(room: SocketRoom<Self>, socket: Socket, query: Query)
 }

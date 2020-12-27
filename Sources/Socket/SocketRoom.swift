@@ -2,6 +2,7 @@ import Vapor
 
 public final class SocketRoom<Client: SocketClient> {
 	public private(set) var clients = [UUID: Client]()
+	public var share = Client.Share()
 	
 	public init() {}
 	
