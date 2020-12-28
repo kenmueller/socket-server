@@ -5,4 +5,6 @@ public protocol SocketClient {
 	associatedtype Query: SocketQuery = SocketDefaultQuery
 	
 	init(room: Room, socket: Socket, query: Query)
+	
+	func onConnect()
 }

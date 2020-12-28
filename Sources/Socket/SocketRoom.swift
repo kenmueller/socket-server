@@ -15,11 +15,14 @@ public final class SocketRoom<Client: SocketClient> {
 			return
 		}
 		
-		clients[query.id] = .init(
+		let client = Client(
 			room: self,
 			socket: .init(room: self, socket: socket, query: query),
 			query: query
 		)
+		
+		clients[query.id] = client
+		client.onConnect()
 	}
 	
 	internal func removeClient(_ id: UUID) {
