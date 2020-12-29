@@ -55,7 +55,7 @@ final class User: SocketClient {
     struct Query: SocketQuery {
         let id: UUID // Required. Represents the client ID.
         let name: String
-	}
+    }
 }
 ```
 
@@ -120,8 +120,8 @@ A `Message` conforms to the `SocketMessage` protocol and represents a message th
 
 ```swift
 struct Greeting: SocketMessage {
-	static let id = "greeting"
-	let text: String
+    static let id = "greeting"
+    let text: String
 }
 ```
 
@@ -133,7 +133,7 @@ You can register listeners in the `init` method of a `SocketClient`.
 
 ```swift
 socket.on { (greeting: Greeting) in
-	print(greeting.text)
+    print(greeting.text)
 }
 ```
 
@@ -141,8 +141,8 @@ socket.on { (greeting: Greeting) in
 
 ```swift
 struct Message: SocketMessage {
-	static let id = "message"
-	let text: String
+    static let id = "message"
+    let text: String
 }
 
 try! socket.send(Message(text: "Hello!"))
