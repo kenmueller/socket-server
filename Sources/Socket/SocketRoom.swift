@@ -18,8 +18,7 @@ public final class SocketRoom<Client: SocketClient> {
 	/// 	- socket: The incoming `WebSocket`.
 	///
 	/// ```
-	/// let room = SocketRoom<User>()
-	/// app.webSocket(onUpgrade: room.register)
+	/// app.webSocket(onUpgrade: SocketRoom<User>().register)
 	/// ```
 	public func register(request: Request, socket: WebSocket) {
 		guard
